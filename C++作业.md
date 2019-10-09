@@ -10,4 +10,4 @@ i是int型的***变量***，ip是***空指针***
 ## c
 ip是指向int类型的***指针***，ip2是int类型的***变量***
 ### 2.35
-j为**int**型，k为**const int&**型，p为**const int***型，j2为**const int**型，k2为**const int&**型
+j为**int**型，k为**const int&**型，p为**const int***型，j2为**const int**型，k2为 **const int&** 型
