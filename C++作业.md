@@ -220,3 +220,11 @@ int main(){
     return 0;
 }
 ```
+### 7.49
+a)s隐式地调用**Sales_data**的构造函数，生成一个临时的**Sales_data**对象，然后传递给combine的形参。
+b)编译无法通过，**Sale_data**不能替换**Sale_data&**
+c)编译无法通过，combine需要改变传入参数，const不合理
+### 7.58 
+**rate**和**vec**不是静态常量成员，不能在类内初始化。
+所以**rate**和**vec**的类外定义必须给出其初始值。
+
