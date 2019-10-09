@@ -26,3 +26,39 @@ int main(){
     return 0;
 }
 ```
+### 3.4
+```
+#include <iostream>
+#include <cstring>
+using namespace std;
+int main(){
+    string s1 , s2;
+    std::cin >> s1;
+    std::cin >> s2;
+    if ( s1 > s2 )
+        std::cout << s1 << std::endl;
+    else if( s1 < s2 )
+        std::cout << s2 << std::endl;
+    else
+        std::cout << " They are equal " << std::endl;
+    return 0;
+}
+```
+ps.这里如果不加`using namespace std;`就会在`string s1,s2;`处报错，不知道为什么
+```
+#include <iostream>
+#include <cstring>
+using namespace std;
+int main(){
+    string s1 , s2;
+    std::cin >> s1;
+    std::cin >> s2;
+    if ( s1.size() > s2.size() )
+        std::cout << s1 << std::endl;
+    else if( s1.size() < s2.size() )
+        std::cout << s2 << std::endl;
+    else
+        std::cout << " They are equal " << std::endl;
+    return 0;
+}
+```
