@@ -160,3 +160,63 @@ int main(){
 }
 ```
 ### 6.19
+a)函数只有一个参数，传入两个不合法    b)合法    c)合法    d)合法
+### 6.39
+a)非法声明，只是将第一个声明重复了一次
+b)非法声明，函数的重载必须有形参数量或者形参类型上的不同
+c)合法声明
+### 7.16
+对于位置和次数并没有严格限定
+出现在public之后的是全作用域都可以访问和更改的部分
+想要隐藏的代码细节，不希望被更改的成员，都应放在private后
+### 7.27
+```
+class Screen
+{   
+public:
+    typedef std::string::size_type pos;
+    Screen() = default;
+    Screen( const pos ht, const pos wt ) : height( ht ), width( wt ), contents( ht * wt, ' ' ) { }
+    Screen( const pos ht, const pos wt, const char c ) : height( ht ), width( wt ), contents( ht * wt, c ) { }
+public:
+    Screen& cursor_move( const pos r, const pos c )
+    {
+        cursor = r * width + c;
+        return *this;
+    }
+    Screen& set_ch( const pos r, const pos c, const char ch )
+    {
+        contents[ r * width + c ] = ch;
+        return *this;
+    }
+    Screen& set_ch( const char ch )
+    {
+        contents[ cursor ] = ch;
+        return *this;
+    } 
+    Screen& display( void )
+    {
+        std::cout << contents;
+        return *this;
+    }
+     
+private:
+    std::string contents;
+    pos cursor = 0;
+    pos height = 0;
+    pos width = 0;
+};
+```
+```
+#include<iostream>
+#include"Screen.h" 
+using namespace std;
+int main(){
+    Screen myScreen( 5, 5, 'X' );
+    myScreen.cursor_move( 4, 0 ).set_ch( '#' ).display();
+    cout << "\n";
+    myScreen.display();
+    cout << "\n";
+    return 0;
+}
+```
