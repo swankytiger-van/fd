@@ -118,9 +118,45 @@ int main(){
     while(scanf( "%d" , &p )!=EOF)
         v.push_back(p);
     int length = v.size();
-    for(int i = 0 ;i < length ; i++)
+    for(int i = 0 ;i < length/2 ; i++)
             std::cout << v[i] + v[length-i-1] << std::endl;
     return 0;
 }
 ```
 ### 3.23
+```
+#include <iostream>
+#include <string>
+#include <vector>
+#include <cstdio>
+using namespace std;
+int main(){
+    vector<int> v(10,5);
+    for (auto i = v.begin(); i != v.end(); i++){
+        *i = *i * 2;
+        std::cout << *i << std::endl;
+    }
+    return 0;
+}
+```
+### 6.10
+```
+#include <iostream>
+#include <string>
+#include <vector>
+using namespace std;
+void exchange(int &val1, int &val2){
+	val1 = val1 + val2;
+	val2 = val1 - val2;
+	val1 = val1 - val2;
+}
+int main(){
+	int val1,val2;
+	cin>>val1>>val2;
+	cout<<"交换之前的两数："<<val1<<" "<<val2<<endl;
+	exchange(val1,val2);
+	cout<<"交换之后的两数："<<val1<<" "<<val2<<endl;
+	return 0;
+}
+```
+### 6.19
