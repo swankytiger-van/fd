@@ -62,3 +62,65 @@ int main(){
     return 0;
 }
 ```
+### 3.5
+```
+#include <iostream>
+#include <cstring>
+using namespace std;
+int main(){
+    string s , sum;
+    while(getline (std::cin , s)){
+        sum + = s;
+        std::cout << sum << std::endl;
+    }
+    return 0;
+}
+```
+```
+#include <iostream>
+#include <cstring>
+using namespace std;
+int main(){
+    string s , sum;
+    while(getline (std::cin , s)){
+        sum = sum + s + " ";
+        std::cout << sum << std::endl;
+    }
+    return 0;
+}
+```
+### 3.20
+```
+#include <iostream>
+#include <string>
+#include <vector>
+#include <cstdio>
+using namespace std;
+int main(){
+    vector<int> v;
+    int p;
+    while(scanf( "%d" , &p )!=EOF)
+        v.push_back(p);
+    for(int i = 0 ; i < v.size() ;i + = 2)
+            std::cout << v[i] + v[i+1] << std::endl;
+    return 0;
+}
+```
+```
+#include <iostream>
+#include <string>
+#include <vector>
+#include <cstdio>
+using namespace std;
+int main(){
+    vector<int> v;
+    int p;
+    while(scanf( "%d" , &p )!=EOF)
+        v.push_back(p);
+    int length = v.size();
+    for(int i = 0 ;i < length ; i++)
+            std::cout << v[i] + v[length-i-1] << std::endl;
+    return 0;
+}
+```
+### 3.23
