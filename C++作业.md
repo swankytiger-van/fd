@@ -11,3 +11,18 @@ i是int型的***变量***，ip是***空指针***
 ip是指向int类型的***指针***，ip2是int类型的***变量***
 ### 2.35
 j为**int**型，k为**const int&**型，p为**const int***型，j2为**const int**型，k2为 **const int&** 型
+```
+#include<iostream>
+#include<typeinfo>
+int main(){
+    const int i = 42;
+    auto j = i; const auto &k = i; auto *p = &i;
+    const auto j2 = i, &k2 = i;
+    std::cout << typeid(j).name() << std::endl;
+    std::cout << typeid(k).name() << std::endl;
+    std::cout << typeid(p).name() << std::endl;
+    std::cout << typeid(j2).name() << std::endl;
+    std::cout << typeid(k2).name() << std::endl;
+    return 0;
+}
+```
